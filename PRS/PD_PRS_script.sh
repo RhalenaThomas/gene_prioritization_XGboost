@@ -1,0 +1,1 @@
+srun -c 1 --mem=8g -t 1:0:0 Rscript PRSice.R --prsice PRSice_linux --base PD_GWAS_2019.no23.1800.tab --binary-target T --gtf ~/runs/go_lab/gencode/gencode.v40lift37.annotation.gtf --thread 1 --target imputed/soft_calls/NeuroX_PD_chr#_rsid_common --beta --cov covar --no-clump -f pheno --prevalence 0.005 -p p --snp SNP --stat b --perm 1000 --snp-set PD_PRS:PD_PRS --out PD_PRS
