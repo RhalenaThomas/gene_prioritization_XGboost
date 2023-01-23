@@ -6,6 +6,7 @@ Collection of script used to extract multi-modality data from eQTL, single-cell 
 Run the R scripts in the XGBoost folder to create the datasets.
 
 # 2. Generate the machine learning model
+Run the Jupyter Notebook- xgboost_v9_add_cv_imbalanced_v2.ipynb in the XGBoost folder to perform feature selection.
 Run the Jupyter Notebook- xgboost_v10_imbalanced_v2.ipynb in the XGBoost folder to create the machine learning model.
 
 # 3. Extract the important features
