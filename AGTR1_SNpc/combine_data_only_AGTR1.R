@@ -12,7 +12,7 @@ result[is.na(result)] <- 0
 
 write.table(result, "SOX6_AGTR1_da_mean_expression.txt", quote = F, row.names = F, sep = "\t")
 
-
+#Create neighborhood scores
 final22 <- result
 final2_subset.list <- lapply(sort(unique(final22$locus)), function(i){
                 final2 <- subset(final22, locus == i)
