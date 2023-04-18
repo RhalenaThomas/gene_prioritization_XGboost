@@ -14,6 +14,7 @@ locus <- fread("../locus/gwas_locus_hg19_genes.tab")
 locus <- locus[,c("symbol","locus")]
 
 
+#Extract effect size and calcuate mean and max values
 result <- lapply(1:8, function(i){
         data <- list(astro,endo,exc,inhib,micro,oli,opc,peri)
         names(data) <- c("astrocytes","endothelial","excitatory","inhibitory","microglia","oligodendrocytes","opc","pericyte")
@@ -30,6 +31,7 @@ final$BRAIN_EQTL_MAX_EFFECT <- apply(final[,-1], 1, max)
 final22 <- merge(final, locus)
 write.table(final22, "brain_eqtl_gwas_snp_summarized.txt", quote = F, row.names = F, sep = "\t")
 
+#Create neighborhood scores
 final2_subset.list <- lapply(sort(unique(final22$locus)), function(i){
                 final2 <- subset(final22, locus == i)
                 colnames(final2) <- paste0(colnames(final2),"_NBH")
