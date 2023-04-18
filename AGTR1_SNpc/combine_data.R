@@ -1,5 +1,6 @@
 library(data.table)
 
+#load data
 locus <- fread("../locus/gwas_locus_hg19_genes.tab")
 locus <- locus[,c("symbol","locus")]
 
@@ -14,6 +15,7 @@ SOX6_DDT <- fread("SOX6_DDT.txt")
 SOX6_GFRA2 <- fread("SOX6_GFRA2.txt")
 SOX6_PART1 <- fread("SOX6_PART1.txt")
 
+#Merge data
 result <- Reduce(function(x, y) merge(x, y, by = "symbol", all.x = T), list(locus,
                                                                                                                                                 CALB1_CALCR,
                                                                                                                                                 CALB1_CRYM_CCDC68,
@@ -27,11 +29,13 @@ result <- Reduce(function(x, y) merge(x, y, by = "symbol", all.x = T), list(locu
                                                                                                                                                 SOX6_PART1))
 
 
+                 
+#set NA to 0
 result[is.na(result)] <- 0
 
 write.table(result, "AGTR1_da_mean_expression.txt", quote = F, row.names = F, sep = "\t")
 
-
+#Create neighborhood scores
 final22 <- result
 final2_subset.list <- lapply(sort(unique(final22$locus)), function(i){
                 final2 <- subset(final22, locus == i)
