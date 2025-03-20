@@ -9,7 +9,9 @@ Eric Yu, Roxanne Larivière, Rhalena A Thomas, Lang Liu, Konstantin Senkevich, S
 # Usage
 
 # 1. Create the training and testing set.
-Run the R scripts in the XGBoost folder to create the datasets.
+1. Collect all the input data from various databases to collect SNP and gene features
+2. Run the R scripts within each datafolder to generate the input txt files.
+3. Run the R scripts in the XGBoost folder to create the datasets formatted for the XGboost model.
 
 # 2. Generate the machine learning model
 Run the Jupyter Notebook- xgboost_v9_add_cv_imbalanced_v2.ipynb in the XGBoost folder to perform feature selection.
