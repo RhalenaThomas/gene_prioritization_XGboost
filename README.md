@@ -2,6 +2,12 @@
 
 Collection of script used to extract multi-modality data from eQTL, single-cell RNAseq data, create neighborhood score, extract distance-based information, run machine learning algorithm. 
 
+This model is used in the manuscript:
+Eric Yu, Roxanne Larivière, Rhalena A Thomas, Lang Liu, Konstantin Senkevich, Shady Rahayel, Jean-François Trempe, Edward A Fon, Ziv Gan-Or, Machine learning nominates the inositol pathway and novel genes in Parkinson’s disease, Brain, Volume 147, Issue 3, March 2024, Pages 887–899, https://doi.org/10.1093/brain/awad345
+
+
+# Usage
+
 # 1. Create the training and testing set.
 Run the R scripts in the XGBoost folder to create the datasets.
 
